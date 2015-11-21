@@ -1,7 +1,7 @@
 /**
  * @fileoverview Hammer driver factory
  * @author Frederik Krautwald
- * @copyright 2015 Frederik Krautwald. All rights reserved.
+ * @copyright 2015 Cyclic Materials. All rights reserved.
  */
 
 function makeHammerDriver() {}
