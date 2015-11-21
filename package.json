@@ -1,0 +1,47 @@
+{
+  "name": "@cyclic/cycle-hammer-driver",
+  "version": "0.1.0",
+  "author": "Frederik Krautwald",
+  "description": "A Hammer driver for Cycle.js",
+  "license": "MIT",
+  "bugs": "https://github.com/CyclicMaterials/cycle-hammer-driver/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CyclicMaterials/cycle-hammer-driver"
+  },
+  "keywords": [
+    "cyclejs",
+    "driver",
+    "hammer",
+    "hammerjs",
+    "gesture",
+    "events",
+    "dom"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "babel": "5.8.29",
+    "chai": "3.4.1",
+    "chai-virtual-dom": "1.0.0",
+    "cli-release": "1.0.3",
+    "eslint": "1.0.0",
+    "eslint-config-cycle": "3.1.0",
+    "eslint-plugin-cycle": "1.0.2",
+    "eslint-plugin-no-class": "0.1.0",
+    "glob": "6.0.1",
+    "mocha": "2.3.4",
+    "validate-commit-message": "3.0.1",
+    "virtual-dom": "2.1.1"
+  },
+  "scripts": {
+    "lint": "eslint src/",
+    "test-js": "mocha --compilers js:babel/register 'src/**/*_test.js'",
+    "test": "npm run lint && npm run test-js",
+    "deps": "npm install && validate-commit-msg",
+    "start": "npm run deps",
+    "patch": "git checkout master && release patch && npm publish --access=public",
+    "minor": "git checkout master && release minor && npm publish --access=public",
+    "major": "git checkout master && release major && npm publish --access=public"
+  }
+}

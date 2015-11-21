@@ -1,0 +1,14 @@
+{
+  "extends": "eslint-config-cycle",
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "ecmaFeatures": {
+    "modules": true
+  },
+  "rules": {
+    "new-cap": 0
+  }
+}
