@@ -1,6 +1,9 @@
 {
   "test_page": "test/page/index.html",
+  "launch_in_ci": [
+    "chrome"
+  ],
   "launch_in_dev": [
-    "Chrome"
+    "chrome"
   ]
 }
