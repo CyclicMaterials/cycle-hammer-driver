@@ -63,8 +63,6 @@
     "build-test": "browserify test/index.js -t babelify -o test/page/tests-bundle.js",
     "clean-test": "rm test/page/tests-bundle.js",
     "test-ci": "testem ci",
-    "pretest-ci": "npm run build-test",
-    "posttest-ci": "npm run clean-test",
     "test": "npm run lint && npm run test-ci",
     "deps": "npm install && validate-commit-msg",
     "start": "npm run deps",
