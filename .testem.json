@@ -8,11 +8,8 @@
     "test/bundle.js"
   ],
   "after_tests": "rm test/bundle.js",
-  "launch_in_ci": [
-    "chrome",
-    "firefox"
-  ],
   "launch_in_dev": [
     "chrome"
-  ]
+  ],
+  "ignore_missing_launchers": true
 }
