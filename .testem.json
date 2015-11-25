@@ -8,6 +8,10 @@
     "test/bundle.js"
   ],
   "after_tests": "rm test/bundle.js",
+  "launch_in_ci": [
+    "chromium",
+    "firefox"
+  ],
   "launch_in_dev": [
     "chrome"
   ],
