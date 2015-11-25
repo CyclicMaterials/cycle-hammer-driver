@@ -19,6 +19,12 @@ function Demo(sources) {
     var dom = _ref.dom;
 
     var options = function options(manager, Hammer) {
+      // Default pan recognizer.
+      manager.add(new Hammer.Pan());
+      // Default tap recognizer.
+      manager.add(new Hammer.Tap());
+      // Default press recognizer.
+      manager.add(new Hammer.Press());
       // Let the pan gesture support all directions.
       // This will block the vertical scrolling on a touch-device
       // while on the element.
