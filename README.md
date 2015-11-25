@@ -2,6 +2,8 @@
 
 > A Hammer driver for Cycle.js.
 
+[![Cycle.js](https://img.shields.io/badge/Cycle.js-compatible-brightgreen.svg)](https://github.com/cyclejs)
+
 The driver incorporates the [Hammer.js](https://hammerjs.github.io/)
 gesture library.
 
