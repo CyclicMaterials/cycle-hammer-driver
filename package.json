@@ -18,10 +18,24 @@
     "events",
     "dom"
   ],
+  "directories": {
+    "doc": "./doc",
+    "lib": "./lib"
+  },
+  "files": [
+    "lib/"
+  ],
+  "main": "lib/cycle-hammer.js",
   "dependencies": {
+    "hammerjs": "2.0.4"
   },
   "devDependencies": {
+    "@cycle/core": "^6.0.0-rc2",
+    "@cycle/dom": "^8.0.0-rc2",
     "babel": "5.8.29",
+    "babelify": "6.4.0",
+    "browserify": "12.0.1",
+    "browserify-shim": "3.8.11",
     "chai": "3.4.1",
     "chai-virtual-dom": "1.0.0",
     "cli-release": "1.0.3",
@@ -29,17 +43,35 @@
     "eslint-config-cycle": "3.1.0",
     "eslint-plugin-cycle": "1.0.2",
     "eslint-plugin-no-class": "0.1.0",
-    "glob": "6.0.1",
+    "markdox": "0.1.10",
     "mocha": "2.3.4",
+    "rx": "4.0.7",
+    "testem": "0.9.11",
+    "uglify-js": "2.5.0",
     "validate-commit-message": "3.0.1",
     "virtual-dom": "2.1.1"
   },
+  "browserify-shim": {
+    "rx": "global:Rx"
+  },
   "scripts": {
     "lint": "eslint src/",
-    "test-js": "mocha --compilers js:babel/register 'src/**/*_test.js'",
-    "test": "npm run lint && npm run test-js",
+    "examples": "node scripts/build-examples.js basic,vertical-pan,recognizeWith,quadruple-tap,recognizeWith-requireFailure-taps",
+    "test-browser": "testem",
+    "pretest-browser": "browserify test/index.js -t babelify -o test/page/tests-bundle.js",
+    "posttest-browser": "rm test/page/tests-bundle.js",
+    "test": "npm run lint && npm run test-browser",
     "deps": "npm install && validate-commit-msg",
     "start": "npm run deps",
+    "browserify": "browserify src/cycle-hammer.js -t babelify -t browserify-shim --standalone CycleHammer --exclude rx --outfile dist/cycle-hammer.js",
+    "uglify": "uglifyjs dist/cycle-hammer.js -o dist/cycle-hammer.min.js",
+    "dist": "npm run browserify && npm run uglify",
+    "predist": "rm -rf dist/ && mkdir -p dist",
+    "doc": "node ./scripts/make-api-doc.js",
+    "predoc": "rm -rf doc/ && mkdir -p doc",
+    "compile": "babel -d lib/ src/",
+    "precompile": "rm -rf lib/ && mkdir -p lib",
+    "prepublish": "npm run compile",
     "patch": "git checkout master && release patch && npm publish --access=public",
     "minor": "git checkout master && release minor && npm publish --access=public",
     "major": "git checkout master && release major && npm publish --access=public"

@@ -2,6 +2,12 @@
 
 > A Hammer driver for Cycle.js.
 
+The driver incorporates the [Hammer.js](https://hammerjs.github.io/)
+gesture library.
+
+[Read the documentation](https://github.com/CyclicMaterials/cycle-hammer-driver/blob/master/doc/api.md)
+and check the [examples](https://github.com/CyclicMaterials/cycle-hammer-driver/blob/master/examples).
+
 ## License
 
 MIT © [Cyclic Materials](http://github.com/CyclicMaterials)
